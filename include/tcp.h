@@ -1,5 +1,5 @@
-#ifndef _TCP_H
-#define _TCP_H
+#ifndef _TCP_H_
+#define _TCP_H_
 
 #include "header.h"
 

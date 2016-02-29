@@ -1,5 +1,5 @@
-#ifndef _HEADER_H
-#define _HEADER_H
+#ifndef _HEADER_H_
+#define _HEADER_H_
 
 #include <stdio.h>
 #include <string.h>
@@ -10,9 +10,6 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <errno.h>
-
-
-#define UDP_MAX 1024
-#define TCP_MAX 1024
+#include<regex.h>
 
 #endif

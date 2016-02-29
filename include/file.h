@@ -1,5 +1,5 @@
-#ifndef _FILE_H
-#define _FILE_H
+#ifndef _FILE_H_
+#define _FILE_H_
 
 #include "header.h"
 

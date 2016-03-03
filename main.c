@@ -1,14 +1,22 @@
-#include "./include/url.h"
-#include "./include/map.h"
+#include "./include/tree.h"
 
 int main(){
-  struct HashMap *map = initHashMap();
+  BinaryTree tree = makeNode(20);
+  insertTree(tree,10);
+  insertTree(tree,34);
+  insertTree(tree,19);
+  insertTree(tree,76);
+  insertTree(tree,8);
+  insertTree(tree,32);
 
-  hashMapSet(map,"name","name_info");
-  hashMapSet(map,"pass","wsq13567");
+  Position temp = findTreeNode(tree,76);
 
-  printf("%s\n", hashMapGet(map,"pass"));
-  printf("%s\n", hashMapGet(map,"name"));
+  iterateTree(tree);
+
+  printf("\n");
+
+  printf("%d\n", (findMin(tree))->value);
+  printf("%d\n", (findMax(tree))->value);
 
   return 1;
 }

@@ -6,7 +6,7 @@ MAIN := .
 CC  := gcc
 LIBNAME := fa
 
-edit: tcp.o udp.o file.o url.o map.o libfa.a out
+edit: tcp.o udp.o file.o url.o map.o tree.o libfa.a out
 
 tcp.o: $(SRC)/tcp.c $(INCLUDE)/tcp.h
 	$(CC) -c $(SRC)/tcp.c -o $(LIB)/tcp.o
@@ -23,8 +23,11 @@ url.o: $(SRC)/url.c $(INCLUDE)/url.h
 map.o: $(SRC)/map.c $(INCLUDE)/map.h
 	$(CC) -c $(SRC)/map.c -o $(LIB)/map.o
 
-libfa.a: $(LIB)/tcp.o $(LIB)/udp.o $(LIB)/file.o $(LIB)/url.o $(LIB)/map.o
-	ar rc $(LIB)/libfa.a $(LIB)/tcp.o $(LIB)/udp.o $(LIB)/file.o $(LIB)/url.o $(LIB)/map.o
+tree.o: $(SRC)/tree.c $(INCLUDE)/tree.h
+	$(CC) -c $(SRC)/tree.c -o $(LIB)/tree.o
+
+libfa.a: $(LIB)/tcp.o $(LIB)/udp.o $(LIB)/file.o $(LIB)/url.o $(LIB)/map.o $(LIB)/tree.o
+	ar rc $(LIB)/libfa.a $(LIB)/tcp.o $(LIB)/udp.o $(LIB)/file.o $(LIB)/url.o $(LIB)/map.o $(LIB)/tree.o
 
 out: $(LIB)/libfa.a
 	$(CC) $(in) -o $(out) -L $(LIB) -l$(LIBNAME)

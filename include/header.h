@@ -13,5 +13,7 @@
 #include<regex.h>
 
 #define GET_ARRAY_LEN(array) sizeof(array) / sizeof(array[0])
+#define MAX(X,Y) (X>Y?X:Y)
+#define MIN(X,Y) (X<Y?X:Y)
 
 #endif

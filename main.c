@@ -1,10 +1,10 @@
 #include "./include/tree.h"
 
 int main(){
-  int array[] = {20,10,34,19,76,8,32};
-  BinaryTree tree = makeTree(array, 7);
+  int array[] = {1,2,3,4,5,6,7,8};
+  AVLTree tree = makeAVLTree(array, GET_ARRAY_LEN(array));
 
-  iterateTree(tree);
+  iterateAVLTree(tree);
 
   return 1;
 }

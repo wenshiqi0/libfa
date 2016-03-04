@@ -12,4 +12,6 @@
 #include <errno.h>
 #include<regex.h>
 
+#define GET_ARRAY_LEN(array) sizeof(array) / sizeof(array[0])
+
 #endif

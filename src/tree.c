@@ -11,6 +11,14 @@ Position makeNode(int value){
   return node;
 }
 
+BinaryTree makeTree(int *array, int size){
+  BinaryTree tree = NULL;
+  for(int i = 0;i < size;i++){
+    tree = insertTree(tree, array[i]);
+  }
+  return tree;
+}
+
 BinaryTree insertTree(BinaryTree tree, int value){
   if(!tree)
     return makeNode(value);
@@ -56,6 +64,28 @@ Position findMax(BinaryTree tree){
 }
 
 Position deleteTreeNode(BinaryTree tree, int value){
-
-  return NULL;
+  Position node;
+  if(!tree)
+    return NULL;
+  else
+  if(tree->value > value)
+    tree->left = deleteTreeNode(tree->left, value);
+  else
+  if(tree->value < value)
+    tree->right = deleteTreeNode(tree->right, value);
+  else
+  if(tree->left && tree->right){
+    node = findMin(tree->right);
+    tree->value = node->value;
+    tree->right = deleteTreeNode(tree->right, tree->value);
+  }else{
+    node = tree;
+    if(!tree->left)
+      tree = tree->right;
+    else
+    if(!tree->right)
+      tree = tree->left;
+    free(node);
+  }
+  return tree;
 }

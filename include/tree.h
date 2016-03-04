@@ -19,6 +19,8 @@ extern BinaryTree initTree();
 
 extern Position makeNode(int value);
 
+extern BinaryTree makeTree(int *array, int size);
+
 extern BinaryTree insertTree(BinaryTree tree, int value);
 
 extern void iterateTree(BinaryTree tree);
